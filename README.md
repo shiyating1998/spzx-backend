@@ -5,3 +5,12 @@ Set up 1 ec2 machine for this project.
 Start date: Dec 22/2023
 
 Target End Date: April 17/2024
+
+Technology: 
+-  nginx
+-  SpringBoot
+-  SpringCloud
+-  mybatis
+-  nacos
+-  redis
+-   
