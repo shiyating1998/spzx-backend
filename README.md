@@ -13,4 +13,4 @@ Technology:
 -  mybatis
 -  nacos
 -  redis
--   
+-  mysql
