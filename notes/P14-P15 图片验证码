@@ -1,0 +1,32 @@
+P14-P15 图片验证码 耗时:90min 12/23
+
+生成图片验证码：hutool
+存入在Redis中
+
+问题：这一集做完之后，还会出现问题，前端页面打不开，因为未定义这个接口
+	// 获取登录用户信息
+	export const GetUserinfo = () => {
+	  return request({
+	    url: '/admin/system/index/getUserInfo',
+	    method: 'get',
+	  })
+报错：F12
+	GET http://localhost:8501/api/userinfo 404 (Not Found)
+
+解决方案：
+1. 做完P16
+2. 用localhost:/8501的Swagger进行接口测试
+
+(做完P16的update)
+3. 不是P16的问题，是浏览器的问题，edge可以出现，但是chrome有error不知道为什么
+（12/25的update）
+4.在Edge也遇到了同样的问题，后来发现要清空cookie，也许是因为这段代码：
+	if (!window.localStorage[TOKEN]) {
+	  return {
+	    name: 'login',
+	    query: {
+	      redirect: to.fullPath,
+	    },
+	    replace: true,
+	  }
+	}

@@ -1,0 +1,6 @@
+P16 用户登录 （获取用户信息）12/24
+
+问题1: 启动ec2后，忘记重启docker service
+报错：codekey is null
+分析：因为没有办法connect到redis，所以会在redisTemplate set 验证码的key和value时就出现问题，断点debug才发现的。
+解决办法：启动docker service

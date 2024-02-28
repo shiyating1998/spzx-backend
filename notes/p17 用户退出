@@ -1,0 +1,10 @@
+P17 用户退出 12/25
+
+1. 如何在ec2的container链接里面的redis?
+ - docker exec -it redis redis-cli
+keys *  （查看keys)
+flushdb (清空)
+
+ 退出接口：
+ 1）删除redis中的用户登录信息
+ 2）删除前端中的token

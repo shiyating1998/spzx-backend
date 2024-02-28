@@ -1,0 +1,21 @@
+P18-20 登录校验 12/26 - 12/28
+
+要创建一个interceptor
+在mvcConfigure里注册拦截器interceptor
+还用了ThreadLocal加用户信息
+
+优化
+1、 config文件里读写exclude的路径
+2、 登录可以从ThreadLocal拿User
+3、前端208error
+
+问题：
+不知道为什么ec2 docker里面的mysql的table不见了，又重新建立了一次
+
+问题2：
+登陆了之后，不跳转到主页面
+
+解决方式：
+检查一下哪些存到redis的关键字是否一样，我的就是一个是user:login,一个是user:login:，一个加了冒号一个没加，导致登录查不到信息，一直不跳转页面
+
+答：太蠢了！！找了两天的bug！！

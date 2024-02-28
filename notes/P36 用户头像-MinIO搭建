@@ -1,0 +1,13 @@
+P36 用户头像-MinIO搭建
+
+
+minio.exe server C:\minio\data
+
+http://192.168.1.97:9000 上传端口号，固定
+
+Console: http://192.168.1.97:50759 控制台，端口变化
+
+
+minio 类似S3， on-premise,便宜
+
+建bucket，改访问策略为public

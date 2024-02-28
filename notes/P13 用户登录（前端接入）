@@ -1,0 +1,39 @@
+P13 用户登录（前端接入）
+
+问题1：npm start 
+报错：
+20:43:43 [vite] warning: 
+C:\vscode\spzx\spzx-admin\src\router\modules\test.js
+16:7  warning  'Auth' is assigned a value but never used    no-unused-vars
+17:7  warning  'NoAuth' is assigned a value but never used  no-unused-vars
+
+✖ 2 problems (0 errors, 2 warnings)
+
+Plugin: vite-eslint-rollup
+File: C:/vscode/spzx/spzx-admin/src/router/modules/test.js
+Browserslist: caniuse-lite is outdated. Please run:
+npx update-browserslist-db@latest
+Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+解决办法：
+npx update-browserslist-db@latest
+
+PS C:\vscode\spzx\spzx-admin> npx update-browserslist-db@latest
+Need to install the following packages:
+  update-browserslist-db@1.0.13
+Ok to proceed? (y) y
+Latest version:     1.0.30001571
+Installed version:  1.0.30001410
+Removing old caniuse-lite from lock file
+Installing new caniuse-lite version
+$ npm install caniuse-lite
+Cleaning package.json dependencies from caniuse-lite
+$ npm uninstall caniuse-lite
+caniuse-lite has been successfully updated
+
+跨域问题：前端3001，后端8501；默认不允许访问
+
+
+问题2： 你的网络有点问题
+报错：在前端输出用户密码时，报错你的网络有点问题
+解决方法：在AWS ec2 stop了之后，没有重启，重启后需要重新用ec2 user connect一下，启动docker里面的services

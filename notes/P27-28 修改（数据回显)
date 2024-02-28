@@ -1,0 +1,14 @@
+P27-28 修改（数据回显)
+1/8/2024
+
+
+判断是要update还是要insert
+如果id为空，则insert，不为空则update
+
+vue：slot
+
+vslint取消：set 
+	viteESLint({
+        // include: ['src/**/*.vue', 'src/**/*.js'],
+        include: [''],//不检查
+      }),

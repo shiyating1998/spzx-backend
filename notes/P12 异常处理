@@ -1,0 +1,11 @@
+P12 异常处理
+
+两个注解
+@ControllerAdvice 增强controller
+@ExceptionHandler exception处理器
+@ResponseBody
+
+
+In the context of Java and Spring Framework, the @ResponseBody annotation is used to indicate that the return value of a method should be serialized directly to the HTTP response body. This is typically used in the context of a Spring MVC controller method.
+
+When a method in a controller is annotated with @ResponseBody, it means that the return value of that method will be converted to the format specified by the client (usually JSON or XML) and directly written to the body of the HTTP response, instead of being resolved to a view. This is commonly used in RESTful web services where the response is not an HTML view but, rather, raw data (JSON, XML, etc.) that is consumed by clients, such as JavaScript-based front-end applications.

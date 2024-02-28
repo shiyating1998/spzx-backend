@@ -1,0 +1,13 @@
+P26 权限管理之角色管理 角色添加
+1/7
+
+问题1：lint问题
+解决方法：排查前端代码，发现需要function先被define，才能够call，不然就会出现问题
+
+问题2：表单上的输入在加上了v-model后消失
+原因：大小写不一致
+解决办法：更改大小写和variable一直sysRole而不是SysRole
+
+问题3：404 not found
+原因：post url多了一个slash “/”
+解决办法：搞定typo，刷新界面
