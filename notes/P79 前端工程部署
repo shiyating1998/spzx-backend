@@ -1,0 +1,23 @@
+P79 部署前端工程（补2/12）
+2/26
+
+docker run -d -p 80:80 \
+--name nginx-spzx \
+-v nginx_html:/usr/share/nginx/html \
+-v nginx_conf:/etc/nginx/ \
+-v nginx_logs:/var/log/nginx  nginx
+
+# nginx-spzx容器的管理命令
+docker start nginx-spzx			# 启动容器
+docker stop nginx-spzx			# 关闭容器
+docker rm nginx-spzx			# 删除容器
+
+问题1：
+因为ec2-user没有权限，所以我用root user把folder改了777 (chmod -R 777 /var/lib/docker)
+
+nginx本地部署也可以，nginx到底是什么？Web server？
+为什么部署了就可以上网了？
+
+P80 搭建后端工程（补2/11）
+
+SpringCloud （是否需要先学习）

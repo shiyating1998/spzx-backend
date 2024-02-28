@@ -1,0 +1,27 @@
+P75 记录日志概述
+2/26 （补2/16）
+
+环绕AOP通知比较好。这样不用每个方法都改。
+
+自定义注解+aop环绕通知
+
+P76 （补2/15）
+create一个注解，扫描到我们的切面类
+
+P77 （补2/14）
+日志，log utils，interface，然后manager实现类
+
+P78 问题分析 （补2/13）
+因为@Transactional (事务) 也是需要AOP，并且比log有更高的优先级。如果我们的log不手动抛出异常，事务是感知不到的，所以需要手动抛出异常。
+
+} catch (Throwable e) {                                 // 代码执行进入到catch中，
+            // 业务方法执行产生异常
+            e.printStackTrace();                                // 打印异常信息
+            LogUtil.afterHandlLog(sysLog , proceed , sysOperLog , 1 , e.getMessage()) ;
+            throw new RuntimeException();
+        }
+
+
+ @Log(title = "JJJ模块" , businessType = 2 )
+@Transactional
+
