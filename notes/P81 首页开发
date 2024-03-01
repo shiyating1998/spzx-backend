@@ -2,3 +2,38 @@ P81-82 首页开发
 2/27
 在spzx-product里面，另外一个启动类。这个是前端了。
 挺有意思的。
+
+P83 分类数据
+2/29
+
+P84 nacos注册中心
+各个模块之间互相独立的……远程调用
+比方：房产中介
+
+```shell
+# 拉取镜像
+docker pull nacos/nacos-server:v2.2.2
+
+# 创建容器
+docker run --name nacos -e MODE=standalone -p 8848:8848 -p 9848:9848 -d nacos/nacos-server:v2.2.2
+
+# nacos2.x的版本新增了一个客户端与服务端的gRpc的通讯端口号9848
+```
+
+打开浏览器访问nacos的所提供的后端管理界面：http://192.168.136.142:8848/nacos
+
+登录成功以后会进入到nacos的主页面：
+
+![image-20230503164647894](assets\image-20230503164647894.png)  
+
+如果可以看到上述界面，就说明nacos的环境搭建好了
+
+用户名和密码：nacos/nacos，登录成功以后会进入到nacos的主页面
+
+
+注意1：可能是原来的ec2太慢了t2.nano了，一弄就死机，换到了一个t2.medium的，然后成功了
+注意2：注意uncomment掉maven，一定要记得“reload maven”，不然不会生效
+
+启动后在log中可以看到：
+2024-02-29T22:26:14.809-05:00  INFO 7056 --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP service-product 192.168.1.97:8511 register finished
+在nacos页面也可以看到

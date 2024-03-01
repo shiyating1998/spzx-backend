@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: service-product
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 54.225.96.210:8848 #TODO
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 54.225.96.210:8848 #TODO
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
