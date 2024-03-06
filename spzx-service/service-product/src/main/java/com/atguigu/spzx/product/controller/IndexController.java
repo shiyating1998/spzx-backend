@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/api/product/index")
 @SuppressWarnings({"unchecked", "rawtypes"})
-@CrossOrigin
+//@CrossOrigin //TODO remove crossorigin since we are using gateway for all product services
 public class IndexController {
 
     @Autowired

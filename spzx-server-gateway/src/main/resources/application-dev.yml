@@ -1,0 +1,29 @@
+
+server:
+  port: 8500 #这似乎是local的port
+spring:
+  application:
+    name: spzx-server-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 54.225.96.210:8848 #TODO 这是nacos ec2 docker的 ip和port
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            # 允许请求中携带的头信息
+            allowedHeaders: "*"
+            # 运行跨域的请求方式
+            allowedMethods: "*"
+            # 跨域检测的有效期,单位s
+            maxAge: 36000
+      routes:
+        - id: service-product
+          uri: lb://service-product
+          predicates:
+            - Path=/*/product/**
